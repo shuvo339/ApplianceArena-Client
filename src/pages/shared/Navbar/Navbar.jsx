@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const navLinks = (
     <>
@@ -39,7 +41,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#e0f7fa]">Login</a>
+        <Link to='/login' className="btn bg-[#e0f7fa]">Login</Link>
       </div>
     </div>
   );
