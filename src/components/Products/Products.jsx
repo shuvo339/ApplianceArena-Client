@@ -21,19 +21,19 @@ const Products = () => {
                 setProducts(data.data)
                 setLoading(false)
             })
-    }, [search, currentPage, url, sort])
+    }, [search, currentPage, url, sort, brand, category, priceRange])
 
     useEffect(() => {
         const getCount = async () => {
             const { data } = await axios(
-                `http://localhost:5000/productcount?search=${search}`
+                `http://localhost:5000/productcount?search=${search}&priceRange=${priceRange}`
             )
 
             setCount(data.count)
             setCurrentPage(1)
         }
         getCount()
-    }, [search])
+    }, [search, priceRange])
 
     const numberOfPages = Math.ceil(count / itemsPerPage)
     const pages = [...Array(numberOfPages).keys()].map(p => p + 1);
@@ -93,28 +93,33 @@ const Products = () => {
             <div className="flex">
             <select onChange={handleBrand} className="w-full lg:w-36 select select-bordered" name="sort">
                 <option value="sort" disabled selected>Brand</option>
-                <option value="samsung">Samsung</option>
-                <option value="singer">Singer</option>
-                <option value="walton">Walton</option>
-                <option value="philips">Philips</option>
-                <option value="sony">Sony</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Singer">Singer</option>
+                <option value="Walton">Walton</option>
+                <option value="Philips">Philips</option>
+                <option value="Sony">Sony</option>
             </select>
             <select onChange={handleCategory} className="w-full lg:w-36 select select-bordered" name="sort">
                 <option value="sort" disabled selected>Category</option>
-                <option value="k-appliance">Kitchen Appliances</option>
-                <option value="refrigerators">Refrigerators</option>
-                <option value="televisions">Televisions</option>
-                <option value="air-conditioners">Air Conditioners</option>
-                <option value="microwaves">Microwaves</option>
-                <option value="purifiers">Air Purifiers</option>
-                <option value="speakers">Speakers</option>
-                <option value="headphones">Headphones</option>
-                <option value="smarthome">Smart Home</option>
-                <option value="s-machines">Sewing Machines</option>
-                <option value="iron">Iron</option>
-                <option value="coffee-makers">Coffee Makers</option>
-                <option value="dishwashers">Dishwashers</option>
-                <option value="fans">Ceiling Fans</option>
+                <option value="Kitchen Appliances">Kitchen Appliances</option>
+                <option value="Refrigerator">Refrigerators</option>
+                <option value="Televisions">Televisions</option>
+                <option value="Air Conditioners">Air Conditioners</option>
+                <option value="Microwaves">Microwaves</option>
+                <option value="Air Purifiers">Air Purifiers</option>
+                <option value="Home Theater Systems">Home Theater Systems</option>
+                <option value="Speakers">Speakers</option>
+                <option value="Vacuum Cleaners">Vacuum Cleaners</option>
+                <option value="Headphones">Headphones</option>
+                <option value="Smart Home Devices">Smart Home Devices</option>
+                <option value="Sewing Machines">Sewing Machines</option>
+                <option value="Irons">Irons</option>
+                <option value="Coffee Makers">Coffee Makers</option>
+                <option value="Dishwashers">Dishwashers</option>
+                <option value="Washing Machines">Washing Machines</option>
+                <option value="Personal Care">Personal Care</option>
+                <option value="Ceiling Fans">Ceiling Fans</option>
+                <option value="Audio Devices">Audio Devices</option>
             </select>
             <select onChange={handlePriceRange} className="w-full lg:w-36 select select-bordered" name="sort">
                 <option value="sort" disabled selected>Price Range</option>
