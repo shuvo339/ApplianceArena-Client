@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import UseAuth from "../../hooks/useAuth";
 
@@ -8,6 +8,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const {signIn, googleLogin} = UseAuth();
     const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin=e=>{
       e.preventDefault();
       const form= e.target;
@@ -16,7 +17,7 @@ const Login = () => {
       signIn(email, password)
       .then(()=>{
         toast.success("You have logged in successfully")
-        navigate('/')
+        navigate(location?.state ? location.state : "/", { replace: true });
       })
       .catch(error=>{
         toast.error(error.message.split(":")[1])

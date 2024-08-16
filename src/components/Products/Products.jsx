@@ -78,7 +78,7 @@ const Products = () => {
     }
 
     return (
-        <div className="my-10">
+        <div className="my-10 max-w-6xl mx-auto px-2">
 
          <div className="flex flex-col md:flex-row  gap-4 md:gap-20  justify-around mb-6">
                {/* sort */}

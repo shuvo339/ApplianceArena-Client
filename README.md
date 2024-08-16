@@ -1,8 +1,21 @@
-# React + Vite
+# ApplianceArena
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Overview of ApplianceArena as a home appliance product sharing web application
+* Product Listing with pagination, Search by name, Filtering by brand, category, and price range, Sorting by price or date added, Fully responsive mobile-first design, User Authentication using Google and Email/Password via Firebase.
 
-Currently, two official plugins are available:
+## Setup and Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/shuvo339/ApplianceArena-Client.git
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3. **Environment Variables:**
+   Create a `.env` file in the root directory with the firebase environment variables:
+
+## [Live Link]()

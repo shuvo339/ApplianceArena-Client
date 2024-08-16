@@ -1,9 +1,10 @@
-import Products from "../../components/Products/Products";
+import HomeProducts from "../../components/HomeProducts/HomeProducts";
+
 
 const Home = () => {
     return (
-        <div className="max-w-6xl mx-auto">
-            <Products></Products>
+        <div className="max-w-6xl mx-auto px-2 my-10">
+            <HomeProducts></HomeProducts>
         </div>
     );
 };

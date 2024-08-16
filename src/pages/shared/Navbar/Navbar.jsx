@@ -1,9 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
+import UseAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+  const {logOut, user} = UseAuth();
+
+  const handleLogout=()=>{ 
+    logOut()
+      .then(()=>{
+      })
+      .catch()
+    }
+
   const navLinks = (
     <>
-      <li><NavLink className={({isActive})=>isActive? 'px-4 py-2 rounded-md font-bold underline mr-2':'p-1 rounded-md mr-2 font-semibold text-[#264653]'} to="/">Home</NavLink></li>
+      <li><NavLink className={({isActive})=>isActive? 'px-4 py-2 rounded-md font-bold underline mr-4':'px-4 py-2 rounded-md mr-4 font-semibold text-[#264653]'} to="/">Home</NavLink></li>
+      <li><NavLink className={({isActive})=>isActive? 'px-4 py-2 rounded-md font-bold underline':'px-4 py-2 rounded-md font-semibold text-[#264653]'} to="/products">Products</NavLink></li>
     </>
   );
   return (
@@ -33,13 +44,16 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl">ApplianceArena</Link>
+        <Link to='/' className="btn btn-ghost text-2xl font-bold">ApplianceArena</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login' className="btn bg-[#e0f7fa]">Login</Link>
+        {
+          user? <button onClick={handleLogout} className="btn bg-[#e0f7fa] hover:scale-105">Logout</button>:<Link to='/login' className="btn bg-[#e0f7fa] hover:scale-105">Login</Link>
+        }
+        
       </div>
     </div>
   );

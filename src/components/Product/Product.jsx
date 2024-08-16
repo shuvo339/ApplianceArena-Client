@@ -7,7 +7,7 @@ const Product = ({product}) => {
         <div className="border-[1px] border-slate-200 p-6 rounded-lg shadow-xl">
         <img className="rounded-lg w-full h-80" src={productImage} alt="" />
         <h1 className="text-xl font-semibold py-4">{productName}</h1>
-        <p className="text-gray-500 pb-4">{description}</p>
+        <p className="text-gray-500 pb-4 ">{description}</p>
         <hr />
         <div className="flex justify-between items-center py-3">
             <h2 className="">Category: {category}</h2>
