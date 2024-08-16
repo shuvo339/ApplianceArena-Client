@@ -18,7 +18,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#d3d3d3] px-16">
+    <div className="navbar bg-[#d3d3d3] px-4 md:px-16">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
-          user? <button onClick={handleLogout} className="btn bg-[#e0f7fa] hover:scale-105">Logout</button>:<Link to='/login' className="btn bg-[#e0f7fa] hover:scale-105">Login</Link>
+          user? <button onClick={handleLogout} className="btn bg-[#9ACCC9] hover:scale-105 border-0">Logout</button>:<Link to='/login' className="btn border-0 bg-[#9ACCC9] hover:scale-105">Login</Link>
         }
         
       </div>

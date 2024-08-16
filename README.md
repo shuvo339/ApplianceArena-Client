@@ -1,6 +1,6 @@
 # ApplianceArena
 
-# Overview of ApplianceArena as a home appliance product sharing web application
+## Overview of ApplianceArena as a home appliance product sharing web application
 * Product Listing with pagination, Search by name, Filtering by brand, category, and price range, Sorting by price or date added, Fully responsive mobile-first design, User Authentication using Google and Email/Password via Firebase.
 
 ## Setup and Installation
@@ -18,4 +18,5 @@
 3. **Environment Variables:**
    Create a `.env` file in the root directory with the firebase environment variables:
 
+## [Server Repository](https://github.com/shuvo339/ApplianceArena-Server)
 ## [Live Link]()

@@ -9,14 +9,14 @@ const Product = ({product}) => {
         <h1 className="text-xl font-semibold py-4">{productName}</h1>
         <p className="text-gray-500 pb-4 ">{description}</p>
         <hr />
-        <div className="flex justify-between items-center py-3">
+        <div className="flex md:flex-row flex-col justify-between items-center py-3">
             <h2 className="">Category: {category}</h2>
             <h2 className="">Brand: {brand}</h2>
             <h2 className="">Price: ${price}</h2>
         </div>
         
         <hr />
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between md:flex-row flex-col items-center py-3">
            
             <div className="flex items-center gap-2">
                 Warranty: 
