@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navLinks = (
     <>
-      <li>
-        <a>Home</a>
-      </li>
+      <li><NavLink className={({isActive})=>isActive? 'px-4 py-2 rounded-md font-bold underline mr-2':'p-1 rounded-md mr-2 font-semibold text-[#264653]'} to="/">Home</NavLink></li>
     </>
   );
   return (
     <div className="navbar bg-[#d3d3d3] px-16">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className=" lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -35,7 +33,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">ApplianceArena</a>
+        <Link to='/' className="btn btn-ghost text-xl">ApplianceArena</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>

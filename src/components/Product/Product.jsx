@@ -1,5 +1,4 @@
 
-
 const Product = ({product}) => {
     const {productName, productImage, description, price, category, brand, warranty, ratings, 
         creationDate} = product

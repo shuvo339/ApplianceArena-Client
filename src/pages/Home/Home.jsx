@@ -1,8 +1,9 @@
+import Products from "../../components/Products/Products";
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is Home</h2>
+        <div className="max-w-6xl mx-auto">
+            <Products></Products>
         </div>
     );
 };

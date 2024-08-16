@@ -7,11 +7,14 @@ const Products = () => {
     const [count, setCount] = useState(0);
     const [search, setSearch] = useState('');
     const [sort, setSort]=useState('');
+    const [brand, setBrand]=useState('');
+    const [category, setCategory]=useState('');
+    const [priceRange, setPriceRange]=useState('');
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
-    const url = `http://localhost:5000/products?search=${search}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}`;
+    const url = `http://localhost:5000/products?search=${search}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}&brand=${brand}&category=${category}&priceRange=${priceRange}`;
     useEffect(() => {
         axios(url)
             .then(data => {
@@ -57,6 +60,18 @@ const Products = () => {
         setSort(e.target.value);
         console.log(e.target.value)
     }
+    const handleBrand=e=>{
+        setBrand(e.target.value);
+        console.log(e.target.value)
+    }
+    const handleCategory=e=>{
+        setCategory(e.target.value);
+        console.log(e.target.value)
+    }
+    const handlePriceRange=e=>{
+        setPriceRange(e.target.value);
+        console.log(e.target.value)
+    }
 
     if (loading) {
         return <span className="loading loading-ring w-[200px] flex justify-center items-center mt-16 mx-auto"></span>
@@ -67,13 +82,48 @@ const Products = () => {
 
          <div className="flex flex-col md:flex-row  gap-4 md:gap-20  justify-around mb-6">
                {/* sort */}
-               <select onChange={handleSort} className="w-full lg:w-72 select select-bordered" name="sort">
+            <select onChange={handleSort} className="w-full lg:w-72 select select-bordered" name="sort">
                 <option value="sort" disabled selected>Sort</option>
                 <option value="low">Low to High Price</option>
                 <option value="high">High to Low Price</option>
                 <option value="new">Newest First</option>
             </select>
 
+            {/* Categorization */}
+            <div className="flex">
+            <select onChange={handleBrand} className="w-full lg:w-36 select select-bordered" name="sort">
+                <option value="sort" disabled selected>Brand</option>
+                <option value="samsung">Samsung</option>
+                <option value="singer">Singer</option>
+                <option value="walton">Walton</option>
+                <option value="philips">Philips</option>
+                <option value="sony">Sony</option>
+            </select>
+            <select onChange={handleCategory} className="w-full lg:w-36 select select-bordered" name="sort">
+                <option value="sort" disabled selected>Category</option>
+                <option value="k-appliance">Kitchen Appliances</option>
+                <option value="refrigerators">Refrigerators</option>
+                <option value="televisions">Televisions</option>
+                <option value="air-conditioners">Air Conditioners</option>
+                <option value="microwaves">Microwaves</option>
+                <option value="purifiers">Air Purifiers</option>
+                <option value="speakers">Speakers</option>
+                <option value="headphones">Headphones</option>
+                <option value="smarthome">Smart Home</option>
+                <option value="s-machines">Sewing Machines</option>
+                <option value="iron">Iron</option>
+                <option value="coffee-makers">Coffee Makers</option>
+                <option value="dishwashers">Dishwashers</option>
+                <option value="fans">Ceiling Fans</option>
+            </select>
+            <select onChange={handlePriceRange} className="w-full lg:w-36 select select-bordered" name="sort">
+                <option value="sort" disabled selected>Price Range</option>
+                <option value="below">Below $1000</option>
+                <option value="between">$1000 to $2000</option>
+                <option value="above">Above $2000</option>
+            </select>
+            </div>
+            
             {/* search */}
             <form onSubmit={handleSearch}>
                 <div className="w-full mb-6 mx-auto">
