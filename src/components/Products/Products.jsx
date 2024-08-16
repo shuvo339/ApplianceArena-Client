@@ -14,7 +14,7 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
-    const url = `http://localhost:5000/products?search=${search}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}&brand=${brand}&category=${category}&priceRange=${priceRange}`;
+    const url = `https://appliance-arena-server-new.vercel.app/products?search=${search}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}&brand=${brand}&category=${category}&priceRange=${priceRange}`;
     useEffect(() => {
         axios(url)
             .then(data => {
@@ -26,7 +26,7 @@ const Products = () => {
     useEffect(() => {
         const getCount = async () => {
             const { data } = await axios(
-                `http://localhost:5000/productcount?search=${search}&priceRange=${priceRange}&brand=${brand}&category=${category}`
+                `https://appliance-arena-server-new.vercel.app/productcount?search=${search}&priceRange=${priceRange}&brand=${brand}&category=${category}`
             )
 
             setCount(data.count)

@@ -6,7 +6,7 @@ const HomeProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const url = `http://localhost:5000/products`;
+    const url = `https://appliance-arena-server-new.vercel.app/products`;
     useEffect(() => {
         axios(url)
             .then(data => {

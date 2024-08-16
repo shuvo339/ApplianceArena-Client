@@ -19,4 +19,4 @@
    Create a `.env` file in the root directory with the firebase environment variables:
 
 ## [Server Repository](https://github.com/shuvo339/ApplianceArena-Server)
-## [Live Link]()
+## [Live Link](https://appliancearena-d4f3e.web.app/)
