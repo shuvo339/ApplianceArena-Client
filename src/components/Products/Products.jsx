@@ -26,14 +26,14 @@ const Products = () => {
     useEffect(() => {
         const getCount = async () => {
             const { data } = await axios(
-                `http://localhost:5000/productcount?search=${search}&priceRange=${priceRange}`
+                `http://localhost:5000/productcount?search=${search}&priceRange=${priceRange}&brand=${brand}&category=${category}`
             )
 
             setCount(data.count)
             setCurrentPage(1)
         }
         getCount()
-    }, [search, priceRange])
+    }, [search, priceRange, brand, category])
 
     const numberOfPages = Math.ceil(count / itemsPerPage)
     const pages = [...Array(numberOfPages).keys()].map(p => p + 1);
@@ -102,7 +102,7 @@ const Products = () => {
             <select onChange={handleCategory} className="w-full lg:w-36 select select-bordered" name="sort">
                 <option value="sort" disabled selected>Category</option>
                 <option value="Kitchen Appliances">Kitchen Appliances</option>
-                <option value="Refrigerator">Refrigerators</option>
+                <option value="Refrigerators">Refrigerators</option>
                 <option value="Televisions">Televisions</option>
                 <option value="Air Conditioners">Air Conditioners</option>
                 <option value="Microwaves">Microwaves</option>
